@@ -25,6 +25,7 @@ function Controls() {
   const videoEnabled = useHMSStore(selectIsLocalVideoEnabled);
   const localPeer = useHMSStore(selectLocalPeer);
   const hlsState = useHMSStore(selectHLSState);
+
   const startHLSStreaming = async () => {
     try {
       await hmsActions.startHLSStreaming();
@@ -47,6 +48,15 @@ function Controls() {
   const toggleVideo = async () => {
     await hmsActions.setLocalVideoEnabled(!videoEnabled);
   };
+
+  const leaveStream = async () => {
+    try {
+      hmsActions.leave();
+      console.log("Leave Success");
+    } catch (error) {
+      console.log("Leave Error: ", error);
+    }
+  };
   return (
     <div className="controls">
       {localPeer.roleName === "broadcaster" ? (
@@ -61,7 +71,7 @@ function Controls() {
             variant="contained"
             disableElevation
             className="leave"
-            onClick={stopHLSStreaming}
+            onClick={leaveStream}
           >
             <LogoutOutlined /> Leave Room
           </Button>
