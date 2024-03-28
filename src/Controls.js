@@ -75,7 +75,7 @@ function Controls() {
           >
             <LogoutOutlined /> Leave Room
           </Button>
-          {hlsState.running ? (
+          {/* {hlsState.running ? (
             <Button
               variant="contained"
               disableElevation
@@ -92,7 +92,7 @@ function Controls() {
             >
               <PodcastsOutlined /> Go Live
             </Button>
-          )}
+          )} */}
         </>
       ) : (
         <Button
