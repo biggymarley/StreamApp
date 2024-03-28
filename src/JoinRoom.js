@@ -42,7 +42,7 @@ function JoinRoom() {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
-      {selectedRole === "broadcaster" ? (
+      {/* {selectedRole === "broadcaster" ? (
         <input
           required
           placeholder="Enter Admin password"
@@ -52,7 +52,7 @@ function JoinRoom() {
         />
       ) : (
         false
-      )}
+      )} */}
 
       <select
         type="text"
@@ -61,12 +61,12 @@ function JoinRoom() {
         onChange={(e) => setSelectedRole(e.target.value)}
         placeholder="Select Role"
       >
-        <option>broadcaster</option>
+        {/* <option>broadcaster</option> */}
         <option>hls-viewer</option>
       </select>
       <button
         type="submit"
-        disabled={selectedRole === "broadcaster" && password !== "Biggy420R"}
+        // disabled={selectedRole === "broadcaster" && password !== "Biggy420R"}
       >
         Join
       </button>
